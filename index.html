@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TestArchitect Pro - 90-Day Upskilling & Interview Prep</title>
+    <meta name="description" content="Personalized technical learning platform to master QA automation, API design, coding challenges, and debugging.">
+    
+    <!-- Google Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Inline styling for menu toggle helper on mobile -->
+    <style>
+        @media (max-width: 768px) {
+            #menu-toggle-btn {
+                display: flex !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- TOP NAVIGATION HEADER -->
+        <header class="top-nav">
+            <div class="nav-brand"><span id="nav-brand-name">Ahamad</span>: Upskill & Interview Prep</div>
+            <!-- Mobile Hamburger -->
+            <button id="menu-toggle-btn" class="menu-toggle-btn">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link active" data-view="home">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link" data-view="about">About Me</a></li>
+                <li class="nav-item"><a href="#dashboard" class="nav-link" data-view="dashboard">Skill Paths</a></li>
+                <li class="nav-item"><a href="#coding" class="nav-link" data-view="coding">Interview Prep</a></li>
+                <li class="nav-item"><a href="#settings" class="nav-link" data-view="settings">Settings</a></li>
+            </ul>
+        </header>
+
+        <!-- MAIN CONTENT CONTAINER -->
+        <main class="main-content">
+            
+            <!-- VIEW CANVAS -->
+            <div class="view-canvas">
+
+                <!-- Prep Hub Workspace Selector Sub-Nav -->
+                <div class="workspace-tabs" id="prep-workspace-tabs" style="display: none;">
+                    <button class="workspace-tab active" data-view="coding">
+                        <span class="material-symbols-outlined">terminal</span>
+                        <span>Coding Arena</span>
+                    </button>
+                    <button class="workspace-tab" data-view="debugging">
+                        <span class="material-symbols-outlined">bug_report</span>
+                        <span>Debugging Lab</span>
+                    </button>
+                    <button class="workspace-tab" data-view="api-design">
+                        <span class="material-symbols-outlined">api</span>
+                        <span>API Scenario Designer</span>
+                    </button>
+                    <button class="workspace-tab" data-view="quizzes">
+                        <span class="material-symbols-outlined">quiz</span>
+                        <span>Diagnostic Exams</span>
+                    </button>
+                </div>
+                
+                <!-- 0. HOME VIEW (LANDING PAGE) -->
+                <div id="home-view" class="view-panel" style="display: block;">
+                    <section class="hero-section">
+                        <div class="hero-content">
+                            <h1 class="hero-headline">QA Automation Lead to Enterprise Architect</h1>
+                            <p class="hero-subtitle">Master core OOP, secure multithreading, advanced E2E structures (Selenium, Playwright), CI/CD pipelines, and high-fidelity API scenarios designed for senior engineering leadership roles.</p>
+                            <div class="hero-actions">
+                                <button class="btn btn-primary" id="hero-cta-learn">Start Upskilling</button>
+                                <button class="btn btn-secondary" id="hero-cta-prep">Explore Interview Arena</button>
+                            </div>
+                            <a href="#learning" class="hero-resume-link" id="hero-resume-learning">Resume your current learning path</a>
+                        </div>
+                        <div class="hero-image-wrapper">
+                            <img src="developer_hero.png" alt="QA Automation Lead Coder" class="hero-image" />
+                        </div>
+                    </section>
+
+                    <div class="bento-grid">
+                        <!-- Bento 1: Skill Development -->
+                        <div class="bento-card col-6">
+                            <div class="bento-card-pill" style="background: var(--primary);"></div>
+                            <div class="bento-card-icon">
+                                <span class="material-symbols-outlined">school</span>
+                            </div>
+                            <div class="bento-card-body">
+                                <h3 class="bento-card-title">Skill Development</h3>
+                                <p class="bento-card-desc">Execute modular 90-day learning curriculum tracks with daily goals, checklists, and progressive mock-compilation frameworks.</p>
+                                <div class="bento-card-tags">
+                                    <button class="bento-tag-btn" data-track="java">Java 8 & OOP</button>
+                                    <button class="bento-tag-btn" data-track="typescript">TypeScript & SOLID</button>
+                                    <button class="bento-tag-btn" data-track="selenium">Selenium WebDriver</button>
+                                    <button class="bento-tag-btn" data-track="playwright">Playwright E2E</button>
+                                    <button class="bento-tag-btn" data-track="devops">DevOps & CI/CD</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bento 2: Interview Prep -->
+                        <div class="bento-card col-6">
+                            <div class="bento-card-pill" style="background: var(--secondary);"></div>
+                            <div class="bento-card-icon">
+                                <span class="material-symbols-outlined">terminal</span>
+                            </div>
+                            <div class="bento-card-body">
+                                <h3 class="bento-card-title">Interview Prep</h3>
+                                <p class="bento-card-desc">Practice high-frequency interview workspaces, fix logical exception bugs, design REST APIs, and review diagnostic exams.</p>
+                                <div class="bento-card-tags">
+                                    <button class="bento-tag-btn" data-view="coding">Coding Arena</button>
+                                    <button class="bento-tag-btn" data-view="debugging">Debugging Lab</button>
+                                    <button class="bento-tag-btn" data-view="api-design">API Spec Designer</button>
+                                    <button class="bento-tag-btn" data-view="quizzes">Competency Quizzes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 0.5 ABOUT ME VIEW -->
+                <div id="about-view" class="view-panel" style="display: none;">
+                    <div class="glass-panel">
+                        <div class="about-grid">
+                            <div class="about-avatar-card">
+                                <div class="about-avatar">
+                                    <span class="material-symbols-outlined">person</span>
+                                </div>
+                                <h2 class="text-xl font-bold" id="about-profile-name">Ahamad</h2>
+                                <p class="text-sm text-outline">QA Automation Lead</p>
+                            </div>
+                            <div class="about-details-card">
+                                <h3 class="text-lg font-bold mb-4">Professional Profile</h3>
+                                <p class="text-body-lg text-on-surface-variant mb-6">Expert Quality and Automation Engineer specializing in building enterprise-grade testing frameworks, orchestrating scalable parallel executions, and standardizing robust CI/CD pipelines. Passionate about system design, code quality, and coaching engineering teams to achieve continuous delivery excellence.</p>
+                                
+                                <div class="stat-grid">
+                                    <div class="stat-item">
+                                        <div class="stat-value">6+</div>
+                                        <div class="stat-label">Years Experience</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">90 Days</div>
+                                        <div class="stat-label">Continuous Prep</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">10</div>
+                                        <div class="stat-label">Mastery Paths</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 1. DASHBOARD VIEW (SKILL PATHS) -->
+                <div id="dashboard-view" class="view-panel" style="display: none;">
+                    <!-- Top Bento Row -->
+                    <div class="bento-grid">
+                        <!-- circular progress readiness -->
+                        <div class="glass-panel col-4 flex flex-col items-center justify-center relative overflow-hidden" style="min-height: 220px;">
+                            <div class="gauge-container">
+                                <svg class="gauge-svg" width="160" height="160">
+                                    <circle class="gauge-circle-bg" cx="80" cy="80" r="70" />
+                                    <circle id="gauge-circle-fill" class="gauge-circle-fill" cx="80" cy="80" r="70" stroke="url(#gauge-gradient)" stroke-dasharray="440" stroke-dashoffset="440" />
+                                    <defs>
+                                        <linearGradient id="gauge-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#0f6cbd" />
+                                            <stop offset="100%" stop-color="#f97316" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <div class="gauge-overlay">
+                                    <span id="gauge-value-text" class="gauge-val text-gradient">0%</span>
+                                    <span class="gauge-lbl">Readiness</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Today's Lesson Quick Launcher -->
+                        <div class="glass-panel col-8 timeline-container">
+                            <div class="timeline-header">
+                                <div style="flex: 1; padding-right: 16px;">
+                                    <h4 class="text-secondary uppercase text-xs tracking-wider mb-1" style="font-weight: 800;">Today's Learning Focus</h4>
+                                    <h2 id="dash-today-title" class="text-2xl font-bold mb-2 text-on-surface">Day 1: Loading...</h2>
+                                    <p id="dash-today-desc" class="text-sm text-outline mb-4">Initial loading of your learning curriculum...</p>
+                                </div>
+                                <button id="dash-today-action" class="btn btn-primary">
+                                    <span>Resume Lesson</span>
+                                    <span class="material-symbols-outlined">arrow_forward</span>
+                                </button>
+                            </div>
+
+                            <!-- Timeline nodes -->
+                            <div class="timeline-path">
+                                <div class="timeline-line-bg"></div>
+                                <div id="dash-timeline-line-fill" class="timeline-line-fill" style="width: 0%;"></div>
+                                <div id="dash-timeline-nodes" class="timeline-nodes">
+                                    <!-- Populated dynamically via app.js -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Middle Bento Row -->
+                    <div class="bento-grid">
+                        <!-- Tasks Checklist -->
+                        <div class="glass-panel col-8">
+                            <h3 class="text-lg font-bold mb-4 text-on-surface flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">fact_check</span>
+                                <span>Day Task Checklist</span>
+                            </h3>
+                            <div id="dash-checklist-container">
+                                <!-- Populated dynamically via app.js -->
+                            </div>
+                        </div>
+
+                        <!-- Alerts Log -->
+                        <div class="glass-panel col-4">
+                            <h3 class="text-lg font-bold mb-4 text-on-surface flex items-center gap-2">
+                                <span class="material-symbols-outlined text-secondary">alarm</span>
+                                <span>Study Reminders</span>
+                            </h3>
+                            <div id="dash-alerts-list" class="flex flex-col gap-3">
+                                <!-- Populated dynamically via app.js -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Grid: Subject Cards -->
+                    <div class="glass-panel mt-6">
+                        <h3 class="text-lg font-bold mb-6 text-on-surface flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">school</span>
+                            <span>Upskilling Core Modules (6+ Years Experience Criteria)</span>
+                        </h3>
+                        
+                        <div class="subject-grid">
+                            <!-- Java -->
+                            <div class="subject-card" data-track="java">
+                                <div class="subject-card-header">
+                                    <div class="subject-icon java">
+                                        <span class="material-symbols-outlined">coffee</span>
+                                    </div>
+                                    <div class="subject-details">
+                                        <h4>Java 8 & Core OOP</h4>
+                                        <span class="sub">10 Days Curriculum</span>
+                                    </div>
+                                    <span class="subject-percent">0%</span>
+                                </div>
+                                <div class="subject-progress-bg">
+                                    <div class="subject-progress-fill" style="width: 0%; background-color: var(--primary);"></div>
+                                </div>
+                            </div>
+
+                            <!-- TypeScript -->
+                            <div class="subject-card" data-track="typescript">
+                                <div class="subject-card-header">
+                                    <div class="subject-icon ts">
+                                        <span class="material-symbols-outlined">data_object</span>
+                                    </div>
+                                    <div class="subject-details">
+                                        <h4>TypeScript & SOLID</h4>
+                                        <span class="sub">10 Days Curriculum</span>
+                                    </div>
+                                    <span class="subject-percent">0%</span>
+                                </div>
+                                <div class="subject-progress-bg">
+                                    <div class="subject-progress-fill" style="width: 0%; background-color: var(--secondary);"></div>
+                                </div>
+                            </div>
+
+                            <!-- Selenium -->
+                            <div class="subject-card" data-track="selenium">
+                                <div class="subject-card-header">
+                                    <div class="subject-icon">
+                                        <span class="material-symbols-outlined">auto_mode</span>
+                                    </div>
+                                    <div class="subject-details">
+                                        <h4>Selenium WebDriver</h4>
+                                        <span class="sub">10 Days Curriculum</span>
+                                    </div>
+                                    <span class="subject-percent">0%</span>
+                                </div>
+                                <div class="subject-progress-bg">
+                                    <div class="subject-progress-fill" style="width: 0%; background-color: var(--primary);"></div>
+                                </div>
+                            </div>
+
+                            <!-- Playwright -->
+                            <div class="subject-card" data-track="playwright">
+                                <div class="subject-card-header">
+                                    <div class="subject-icon pw">
+                                        <span class="material-symbols-outlined">play_circle</span>
+                                    </div>
+                                    <div class="subject-details">
+                                        <h4>Playwright Frameworks</h4>
+                                        <span class="sub">10 Days Curriculum</span>
+                                    </div>
+                                    <span class="subject-percent">0%</span>
+                                </div>
+                                <div class="subject-progress-bg">
+                                    <div class="subject-progress-fill" style="width: 0%; background-color: var(--secondary);"></div>
+                                </div>
+                            </div>
+
+                            <!-- TestNG -->
+                            <div class="subject-card" data-track="testng">
+                                <div class="subject-card-header">
+                                    <div class="subject-icon testng">
+                                        <span class="material-symbols-outlined">settings</span>
+                                    </div>
+                                    <div class="subject-details">
+                                        <h4>TestNG Orchestration</h4>
+                                        <span class="sub">5 Days Curriculum</span>
+                                    </div>
+                                    <span class="subject-percent">0%</span>
+                                </div>
+                                <div class="subject-progress-bg">
+                                    <div class="subject-progress-fill" style="width: 0%; background-color: var(--error);"></div>
+                                </div>
+                            </div>
+
+                            <!-- API Manual -->
+                            <div class="subject-card" data-track="api_manual">
+                                <div class="subject-card-header">
+                                    <div class="subject-icon api">
+                                        <span class="material-symbols-outlined">api</span>
+                                    </div>
+                                    <div class="subject-details">
+                                        <h4>API Test Case Design</h4>
+                                        <span class="sub">5 Days Curriculum</span>
+                                    </div>
+                                    <span class="subject-percent">0%</span>
+                                </div>
+                                <div class="subject-progress-bg">
+                                    <div class="subject-progress-fill" style="width: 0%; background-color: var(--primary);"></div>
+                                </div>
+                            </div>
+
+                            <!-- Rest Assured -->
+                            <div class="subject-card" data-track="rest_assured">
+                                <div class="subject-card-header">
+                                    <div class="subject-icon api">
+                                        <span class="material-symbols-outlined">api</span>
+                                    </div>
+                                    <div class="subject-details">
+                                        <h4>Rest Assured Automation</h4>
+                                        <span class="sub">10 Days Curriculum</span>
+                                    </div>
+                                    <span class="subject-percent">0%</span>
+                                </div>
+                                <div class="subject-progress-bg">
+                                    <div class="subject-progress-fill" style="width: 0%; background-color: var(--secondary);"></div>
+                                </div>
+                            </div>
+
+                            <!-- Appium Mobile Automation -->
+                            <div class="subject-card" data-track="appium">
+                                <div class="subject-card-header">
+                                    <div class="subject-icon">
+                                        <span class="material-symbols-outlined">phone_android</span>
+                                    </div>
+                                    <div class="subject-details">
+                                        <h4>Appium Mobile Automation</h4>
+                                        <span class="sub">10 Days Curriculum</span>
+                                    </div>
+                                    <span class="subject-percent">0%</span>
+                                </div>
+                                <div class="subject-progress-bg">
+                                    <div class="subject-progress-fill" style="width: 0%; background-color: var(--primary);"></div>
+                                </div>
+                            </div>
+
+                            <!-- DevOps & CI/CD -->
+                            <div class="subject-card" data-track="devops">
+                                <div class="subject-card-header">
+                                    <div class="subject-icon ts">
+                                        <span class="material-symbols-outlined">cloud_sync</span>
+                                    </div>
+                                    <div class="subject-details">
+                                        <h4>DevOps & CI/CD Pipelines</h4>
+                                        <span class="sub">10 Days Curriculum</span>
+                                    </div>
+                                    <span class="subject-percent">0%</span>
+                                </div>
+                                <div class="subject-progress-bg">
+                                    <div class="subject-progress-fill" style="width: 0%; background-color: var(--secondary);"></div>
+                                </div>
+                            </div>
+
+                            <!-- Enterprise Architecture -->
+                            <div class="subject-card" data-track="architecture">
+                                <div class="subject-card-header">
+                                    <div class="subject-icon testng">
+                                        <span class="material-symbols-outlined">layers</span>
+                                    </div>
+                                    <div class="subject-details">
+                                        <h4>Framework Architecture</h4>
+                                        <span class="sub">10 Days Curriculum</span>
+                                    </div>
+                                    <span class="subject-percent">0%</span>
+                                </div>
+                                <div class="subject-progress-bg">
+                                    <div class="subject-progress-fill" style="width: 0%; background-color: var(--error);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. LEARNING HUB VIEW -->
+                <div id="learning-view" class="view-panel" style="display: none;">
+                    <div class="glass-panel mb-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span id="learn-meta" class="text-xs uppercase tracking-wider text-primary">Track Title</span>
+                            <div class="flex items-center gap-2">
+                                <button id="learn-prev-btn" class="btn btn-secondary py-1 px-3 text-sm flex items-center gap-1" title="Previous Day">
+                                    <span class="material-symbols-outlined text-[18px]">arrow_back_ios</span>
+                                </button>
+                                <button id="learn-next-btn" class="btn btn-secondary py-1 px-3 text-sm flex items-center gap-1" title="Next Day">
+                                    <span class="material-symbols-outlined text-[18px]">arrow_forward_ios</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <h2 id="learn-title" class="text-2xl font-bold mb-4 text-on-surface">Day X: Lesson Title</h2>
+                        
+                        <div id="learn-desc" class="mb-6 text-on-surface-variant leading-relaxed">
+                            <!-- day details description -->
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                            <div>
+                                <h3 class="font-semibold mb-4 text-on-surface flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary">checklist</span>
+                                    <span>Checklist Tasks</span>
+                                </h3>
+                                <div id="learn-tasks-container">
+                                    <!-- tasks lists checklist -->
+                                </div>
+                            </div>
+                            
+                            <div id="learn-exercise-container">
+                                <!-- exercise launcher widget -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. CODING ARENA VIEW -->
+                <div id="coding-view" class="view-panel" style="display: none;">
+                    <div class="split-container">
+                        <!-- Left panel: challenge info -->
+                        <div class="glass-panel panel-left">
+                            <div class="panel-tabs">
+                                <button class="panel-tab active">
+                                    <span class="material-symbols-outlined text-sm">description</span>
+                                    <span>Description</span>
+                                </button>
+                            </div>
+                            <div class="panel-body">
+                                <h2 id="code-title" class="text-lg font-bold mb-2 text-on-surface">Challenge Title</h2>
+                                <div id="code-desc-container" class="text-sm text-on-surface-variant space-y-4">
+                                    <!-- description html -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right panel: interactive editor -->
+                        <div class="panel-right">
+                            <div class="editor-panel">
+                                <div class="editor-header">
+                                    <div class="editor-title text-gradient">
+                                        <span class="material-symbols-outlined text-secondary text-sm">code</span>
+                                        <span id="code-lang-label">solution.java</span>
+                                    </div>
+                                    <div class="editor-actions">
+                                        <span id="code-timer" class="btn btn-secondary py-1 px-3 text-sm flex items-center gap-1" style="border-color: #1e293b; color: #94a3b8; background: #0b1329;">
+                                            <span class="material-symbols-outlined text-[18px]">timer</span>
+                                            <span>20:00</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="editor-wrapper">
+                                    <textarea id="code-editor-area" class="editor-textarea" spellcheck="false" autocomplete="false"></textarea>
+                                </div>
+                                <div class="editor-footer">
+                                    <button id="code-run-btn" class="btn btn-secondary" style="border-color: #1e293b; color: #94a3b8; background: #0b1329;">Run Mock Tests</button>
+                                    <button id="code-submit-btn" class="btn btn-primary">Submit Answer</button>
+                                </div>
+                            </div>
+
+                            <!-- compiler output -->
+                            <div class="console-panel">
+                                <div class="console-header">
+                                    <div class="console-tabs">
+                                        <button class="console-tab-btn active">Compiler Logs</button>
+                                    </div>
+                                    <div id="code-console-summary" class="console-summary" style="display: none;">
+                                        <!-- pass / fail status -->
+                                    </div>
+                                </div>
+                                <div id="code-console-body" class="console-body">
+                                    <!-- test outputs -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. DEBUGGING LAB VIEW -->
+                <div id="debugging-view" class="view-panel" style="display: none;">
+                    <div class="split-container">
+                        <!-- Left panel: debug details -->
+                        <div class="glass-panel panel-left">
+                            <div class="panel-body">
+                                <h4 class="text-xs uppercase text-error tracking-wider mb-1" style="font-weight: 800;">Debugging Task</h4>
+                                <h2 id="debug-title" class="text-xl font-bold mb-4">Fix Execution Failure</h2>
+                                <div id="debug-desc-container" class="text-sm text-on-surface-variant space-y-4">
+                                    <!-- dynamic description -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right panel: clickable editor -->
+                        <div class="panel-right">
+                            <div class="glass-panel flex-grow flex flex-col" style="min-height: 320px; padding: 0; overflow: hidden;">
+                                <div class="editor-header" style="height: 52px; padding: 0 20px; background: #0b1329; border-bottom: 1px solid #1e293b;">
+                                    <div class="editor-title text-gradient" style="color: #ef4444;">
+                                        <span class="material-symbols-outlined text-error text-sm">bug_report</span>
+                                        <span>Click the buggy line of code to fix it:</span>
+                                    </div>
+                                </div>
+                                <div id="debug-code-lines" class="console-body flex-1 p-4" style="background: #020617; line-height: 1.8;">
+                                    <!-- lines are generated here -->
+                                </div>
+                            </div>
+
+                            <!-- edit area -->
+                            <div id="debug-fix-container" class="glass-panel" style="display: none;">
+                                <h4 class="text-sm font-semibold mb-2">Rewrite line code:</h4>
+                                <div class="flex flex-col gap-3">
+                                    <textarea id="debug-fix-input" class="api-textarea" style="height: 60px; font-family: 'JetBrains Mono', monospace;" spellcheck="false"></textarea>
+                                    <div class="flex justify-end">
+                                        <button id="debug-test-btn" class="btn btn-primary">Apply Fix & Compile</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. API DESIGN SCENARIO VIEW -->
+                <div id="api-design-view" class="view-panel" style="display: none;">
+                    <div class="split-container">
+                        <!-- Left panel: Swagger Swagger technical contract specs -->
+                        <div class="glass-panel panel-left">
+                            <div class="panel-body">
+                                <h4 class="text-xs uppercase text-secondary tracking-wider mb-1" style="font-weight: 800;">Contract Analyzer</h4>
+                                <h2 id="api-title" class="text-xl font-bold mb-4 font-headline-md">API Endpoint Specifications</h2>
+                                <div class="api-spec-header mb-4">
+                                    <span id="api-method-label" class="api-method post">POST</span>
+                                    <span id="api-path-label" class="api-path">/api/v1/resource</span>
+                                </div>
+                                <div class="api-spec-body">
+                                    <h4 class="text-xs text-outline mb-2">Request Specification:</h4>
+                                    <pre id="api-spec-content" class="text-xs leading-relaxed whitespace-pre-wrap" style="color: var(--primary);"></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right panel: Design Inputs -->
+                        <div class="panel-right">
+                            <div class="glass-panel flex-grow flex flex-col" style="min-height: 280px;">
+                                <h3 class="text-md font-bold mb-2">Identify Boundary, Negative & Security Scenarios</h3>
+                                <p class="text-xs text-outline mb-4">Provide test cases including boundary checking, security payloads, expired token exceptions, and idempotency validations. Place each case on a new line.</p>
+                                <textarea id="api-cases-input" class="api-textarea flex-grow p-4" placeholder="Write your test scenarios here... (e.g. Test quantity boundary with 0 or negative values)"></textarea>
+                                <div class="flex justify-end mt-4">
+                                    <button id="api-eval-btn" class="btn btn-primary">Evaluate Design Depth</button>
+                                </div>
+                            </div>
+
+                            <!-- analysis summary results -->
+                            <div id="api-eval-results" class="glass-panel" style="display: none;">
+                                <div class="flex items-center gap-6 mb-4">
+                                    <div class="text-center">
+                                        <h2 id="api-eval-score" class="text-3xl font-black text-secondary">0%</h2>
+                                        <span class="text-[10px] uppercase text-outline">Coverage Score</span>
+                                    </div>
+                                    <div>
+                                        <h4 id="api-eval-desc" class="font-semibold text-sm">Covered 0 of 5 expected scenarios.</h4>
+                                        <p class="text-xs text-outline">Minimum 60% coverage required to complete this module.</p>
+                                    </div>
+                                </div>
+                                <ul id="api-eval-feedback" class="text-xs text-on-surface-variant max-h-40 overflow-y-auto pl-2">
+                                    <!-- dynamic list items feedback -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. COMPETENCY QUIZZES VIEW -->
+                <div id="quizzes-view" class="view-panel" style="display: none;">
+                    <div class="quiz-container glass-panel">
+                        <div class="quiz-progress">
+                            <span id="quiz-num-label">Question 1 of X</span>
+                            <span style="font-weight: 700;">Diagnostic Exam</span>
+                        </div>
+                        <div class="quiz-progress-bar">
+                            <div id="quiz-bar-fill" class="quiz-progress-fill"></div>
+                        </div>
+                        <h2 id="quiz-title" class="text-gradient text-xs uppercase tracking-wider mb-2" style="font-weight: 800;">Subject Competency</h2>
+                        <p id="quiz-question-text" class="quiz-question text-on-surface">Question loading...</p>
+                        
+                        <div id="quiz-options-container" class="quiz-options">
+                            <!-- populated dynamically via app.js -->
+                        </div>
+                        
+                        <div id="quiz-explain-panel" class="quiz-explanation">
+                            <h4 class="font-bold text-secondary mb-1">Detailed Explanation & Design Rationale:</h4>
+                            <p id="quiz-explain-text">Diagnostic review goes here.</p>
+                        </div>
+                        
+                        <div class="flex justify-end mt-6">
+                            <button id="quiz-action-btn" class="btn btn-primary" style="display: none;">Next Question</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. CONFIGURABLE SETTINGS VIEW -->
+                <div id="settings-view" class="view-panel" style="display: none;">
+                    <div class="quiz-container glass-panel">
+                        <h2 class="text-2xl font-bold mb-6 text-gradient" style="font-weight: 800;">Study Timing & Preferences</h2>
+                        
+                        <div class="settings-group">
+                            <h3>User Profile Settings</h3>
+                            <div class="settings-row">
+                                <div class="settings-row-label">
+                                    <h4>Profile Name</h4>
+                                    <p>Enter your name to personalize the platform brand and profile view.</p>
+                                </div>
+                                <input type="text" id="settings-name-input" class="select-input" style="width: 220px; font-family: inherit;" placeholder="e.g. Ahamad" />
+                            </div>
+                        </div>
+                        
+                        <div class="settings-group mt-6">
+                            <h3>Reminder Control System</h3>
+                            <div class="settings-row">
+                                <div class="settings-row-label">
+                                    <h4>Daily Prep Reminders</h4>
+                                    <p>Permit HTML5 Desktop Notifications for structured daily prep cycles.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="settings-toggle-input" checked />
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            
+                            <div class="settings-row">
+                                <div class="settings-row-label">
+                                    <h4>Preferred Reminder Timing</h4>
+                                    <p>Select the daily time to receive notifications.</p>
+                                </div>
+                                <input type="time" id="settings-time-input" class="select-input" value="09:00" />
+                            </div>
+                        </div>
+
+                        <div class="settings-group mt-8">
+                            <h3>Platform Administration</h3>
+                            <div class="settings-row">
+                                <div class="settings-row-label">
+                                    <h4>Reset Platform Progression</h4>
+                                    <p>Deletes localStorage history, checklist scores, and challenges. Action is irreversible.</p>
+                                </div>
+                                <button id="settings-reset-btn" class="btn btn-secondary text-error hover:bg-error/10 hover:border-error/20" style="color: var(--error)">Reset Progress</button>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end mt-8 gap-4">
+                            <button id="settings-save-btn" class="btn btn-primary">Save Preferences</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        
+        <!-- FOOTER -->
+        <footer class="app-footer">
+            <div>© 2026 TestArchitect Pro. All rights reserved.</div>
+            <div>
+                <a href="https://github.com" class="footer-link" target="_blank">
+                    <span class="material-symbols-outlined text-sm">code</span> GitHub Portal
+                </a>
+            </div>
+        </footer>
+        
+    </div>
+
+    <!-- TOAST POPUP CONTAINER -->
+    <div id="toast-wrapper" class="toast-container"></div>
+
+    <!-- JavaScript logic engine -->
+    <script src="app.js"></script>
+
+    <!-- Sidebar toggling listener for mobile devices -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('menu-toggle-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (toggleBtn && navMenu) {
+                toggleBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navMenu.classList.toggle('mobile-open');
+                });
+                
+                // Close sidebar when clicking outside on mobile
+                document.addEventListener('click', (e) => {
+                    if (navMenu.classList.contains('mobile-open') && !navMenu.contains(e.target) && e.target !== toggleBtn) {
+                        navMenu.classList.remove('mobile-open');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

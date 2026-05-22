@@ -1,0 +1,21 @@
+{
+  "name": "testarchitect-pro",
+  "version": "1.0.0",
+  "description": "Premium 90-Day QA Automation Upskilling & Interview Prep Platform",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx -y http-server -p 8080"
+  },
+  "keywords": [
+    "qa",
+    "automation",
+    "interview-prep",
+    "learning-path",
+    "java",
+    "typescript",
+    "playwright",
+    "selenium"
+  ],
+  "author": "Ahamad",
+  "license": "ISC"
+}
